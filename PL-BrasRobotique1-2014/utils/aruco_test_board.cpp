@@ -43,6 +43,7 @@ Mat TheInputImage,TheInputImageCopy;
 CameraParameters TheCameraParameters;
 BoardConfiguration TheBoardConfig;
 BoardDetector TheBoardDetector;
+vector<Marker> Markers;
 
 string TheOutVideoFilePath;
 cv::VideoWriter VWriter;
@@ -118,7 +119,7 @@ int main(int argc,char **argv)
         TheBoardConfig.readFromFile(TheBoardConfigFile);
         //read from camera or from  file
         if (TheInputVideo=="live") {
-            TheVideoCapturer.open(1);
+            TheVideoCapturer.open(0);
             waitTime=10;
         }
         else TheVideoCapturer.open(TheInputVideo);
@@ -169,8 +170,16 @@ int main(int argc,char **argv)
             AvrgTime.second++;
             cout<<"Time detection="<<1000*AvrgTime.first/AvrgTime.second<<" milliseconds"<<endl;
             //print marker borders
-            for (unsigned int i=0;i<TheBoardDetector.getDetectedMarkers().size();i++)
+
+            ofstream fichier("testvideo.txt", ios::out | ios::trunc);   // on ouvre le fichier en écriture
+
+            for (unsigned int i=0;i<TheBoardDetector.getDetectedMarkers().size();i++) {
                 TheBoardDetector.getDetectedMarkers()[i].draw(TheInputImageCopy,Scalar(0,0,255),1);
+                cout<<TheBoardDetector.getDetectedMarkers()[i]<<endl;
+		fichier<<TheBoardDetector.getDetectedMarkers()[i]<<endl;
+            }
+
+            fichier.close();
 
             //print board
              if (TheCameraParameters.isValid()) {

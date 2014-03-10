@@ -30,11 +30,12 @@ or implied, of Rafael Muñoz Salinas.
 #include <sstream>
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
+#include <fstream>
 #include "aruco.h"
 #include "boarddetector.h"
 #include "cvdrawingutils.h"
 using namespace cv;
-using namespace aruco; 
+using namespace aruco;
 /************************************
  *
  *
@@ -45,6 +46,7 @@ int main(int argc,char **argv)
 {
 	try
 	{
+
 		if(argc<3) {cerr<<"Usage: image  boardConfig.yml [cameraParams.yml] [markerSize]  [outImage]"<<endl;exit(0);}
 		aruco::CameraParameters CamParam;
 		MarkerDetector MDetector;
@@ -53,7 +55,7 @@ int main(int argc,char **argv)
 		BoardConfiguration TheBoardConfig;
 		BoardDetector TheBoardDetector;
 		Board TheBoardDetected;
-		
+
 		cv::Mat InImage=cv::imread(argv[1]);
 		TheBoardConfig.readFromFile(argv[2]);
 		if (argc>=4) {
@@ -62,19 +64,31 @@ int main(int argc,char **argv)
 		  CamParam.resize( InImage.size());
 		}
 
-		if (argc>=5) 
+		if (argc>=5)
 		  MarkerSize=atof(argv[4]);
-		
+
 		cv::namedWindow("in",1);
 		MDetector.detect(InImage,Markers);//detect markers without computing R and T information
 		//Detection of the board
 		float probDetect=TheBoardDetector.detect( Markers, TheBoardConfig,TheBoardDetected, CamParam,MarkerSize);
-		
+
+
+		ofstream fichier("test.txt", ios::out | ios::trunc);   // on ouvre le fichier en écriture
+
 		//for each marker, draw info and its boundaries in the image
 		for(unsigned int i=0;i<Markers.size();i++){
+
+            if(fichier)  // si l'ouverture a réussi
+        {
+            // instructions
+                fichier << Markers[i]<< endl;
+
+        }
 			cout<<Markers[i]<<endl;
 			Markers[i].draw(InImage,Scalar(0,0,255),2);
 		}
+        // on ferme le fichier
+        fichier.close();
 
 		//draw a 3d cube in each marker if there is 3d info
 		if (  CamParam.isValid()){
@@ -86,12 +100,12 @@ int main(int argc,char **argv)
 		  cout<<TheBoardDetected.Rvec<<" "<<TheBoardDetected.Tvec<<endl;
 		}
 		//draw board axis
-		
+
 		//show input with augmented information
 		cv::imshow("in",InImage);
 		cv::waitKey(0);//wait for key to be pressed
 		if(argc>=6) cv::imwrite(argv[5],InImage);
-		
+
 	}catch(std::exception &ex)
 
 	{
