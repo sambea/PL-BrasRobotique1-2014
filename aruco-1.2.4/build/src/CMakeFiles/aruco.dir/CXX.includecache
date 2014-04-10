@@ -6,25 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/elhadjimalick/Documents/aruco-1.2.4/src/our_aruco_test.cpp
-iostream
--
-aruco/aruco.h
--
-aruco/cvdrawingutils.h
--
-opencv2/highgui/highgui.hpp
--
-
-/usr/local/include/aruco/aruco.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/aruco.h
 markerdetector.h
-/usr/local/include/aruco/markerdetector.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/markerdetector.h
 boarddetector.h
-/usr/local/include/aruco/boarddetector.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/boarddetector.h
 cvdrawingutils.h
-/usr/local/include/aruco/cvdrawingutils.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cvdrawingutils.h
 
-/usr/local/include/aruco/board.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/board.h
 opencv2/opencv.hpp
 -
 string
@@ -32,39 +22,43 @@ string
 vector
 -
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 marker.h
-/usr/local/include/aruco/marker.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/marker.h
 
-/usr/local/include/aruco/boarddetector.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/boarddetector.h
 opencv2/opencv.hpp
 -
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 board.h
-/usr/local/include/aruco/board.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/board.h
 cameraparameters.h
-/usr/local/include/aruco/cameraparameters.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cameraparameters.h
 markerdetector.h
-/usr/local/include/aruco/markerdetector.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/markerdetector.h
 
-/usr/local/include/aruco/cameraparameters.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cameraparameters.h
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 opencv2/opencv.hpp
 -
 string
 -
 
-/usr/local/include/aruco/cvdrawingutils.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cvdrawingutils.cpp
+cvdrawingutils.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cvdrawingutils.h
+
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cvdrawingutils.h
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 aruco.h
-/usr/local/include/aruco/aruco.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/aruco.h
 
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 
-/usr/local/include/aruco/marker.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/marker.h
 vector
 -
 iostream
@@ -72,11 +66,11 @@ iostream
 opencv2/opencv.hpp
 -
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 cameraparameters.h
-/usr/local/include/aruco/cameraparameters.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cameraparameters.h
 
-/usr/local/include/aruco/markerdetector.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/markerdetector.h
 opencv2/opencv.hpp
 -
 cstdio
@@ -84,11 +78,11 @@ cstdio
 iostream
 -
 cameraparameters.h
-/usr/local/include/aruco/cameraparameters.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/cameraparameters.h
 exports.h
-/usr/local/include/aruco/exports.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/exports.h
 marker.h
-/usr/local/include/aruco/marker.h
+/home/elhadjimalick/Documents/aruco-1.2.4/src/marker.h
 
 /usr/local/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp

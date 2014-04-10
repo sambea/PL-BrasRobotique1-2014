@@ -2,5 +2,5 @@
 aruco_bc_nmarkers: 1
 aruco_bc_mInfoType: 0
 aruco_bc_markers:
-   - { id:860, corners:[ [ -50., -50., 0. ], [ 50., -50., 0. ], [ 50.,
+   - { id:528, corners:[ [ -50., -50., 0. ], [ 50., -50., 0. ], [ 50.,
        50., 0. ], [ -50., 50., 0. ] ] }

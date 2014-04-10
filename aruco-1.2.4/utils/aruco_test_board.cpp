@@ -171,15 +171,21 @@ int main(int argc,char **argv)
             cout<<"Time detection="<<1000*AvrgTime.first/AvrgTime.second<<" milliseconds"<<endl;
             //print marker borders
 
-            ofstream fichier("testvideo.txt", ios::out | ios::trunc);   // on ouvre le fichier en écriture
+           
 
             for (unsigned int i=0;i<TheBoardDetector.getDetectedMarkers().size();i++) {
                 TheBoardDetector.getDetectedMarkers()[i].draw(TheInputImageCopy,Scalar(0,0,255),1);
-                cout<<TheBoardDetector.getDetectedMarkers()[i]<<endl;
-		fichier<<TheBoardDetector.getDetectedMarkers()[i]<<endl;
+		cout<<TheBoardDetector.getDetectedMarkers()[i]<<endl;
+		if (i==1) {  //le premier marqueur trouvé
+	        // on ouvre le fichier en écriture
+		ofstream fichier("test_video.txt", ios::out | ios::trunc);
+		fichier<<TheBoardDetector.getDetectedMarkers()[i]<<endl; //ecriture de ce marqueur dans le fichier
+	        fichier.close();
+		}
             }
 
-            fichier.close();
+
+
 
             //print board
              if (TheCameraParameters.isValid()) {

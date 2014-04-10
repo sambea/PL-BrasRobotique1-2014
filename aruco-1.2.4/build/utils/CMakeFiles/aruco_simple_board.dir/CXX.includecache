@@ -91,6 +91,8 @@ opencv/cv.h
 -
 opencv/highgui.h
 -
+fstream
+-
 aruco.h
 /home/elhadjimalick/Documents/aruco-1.2.4/utils/aruco.h
 boarddetector.h
